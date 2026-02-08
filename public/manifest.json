@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Wallapop reviews",
+  "version": "0.1",
+  "action": {
+    "default_popup": "src/popup/index.html"
+  },
+  "options_page": "src/options/index.html",
+  "background": {
+    "service_worker": "./background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "js": ["./content.js"]
+    }
+  ],
+  "permissions": ["storage", "tabs"]
+}
