@@ -4,6 +4,14 @@
   "type": "module",
   "scripts": {
     "lint": "pnpm -r run lint",
-    "test": "pnpm -r run test"
+    "test": "pnpm -r run test",
+    "build": "pnpm -r run build",
+    "dev:api": "pnpm --filter wallapop-reviews-api dev",
+    "dev:extension": "pnpm --filter wallapop-reviews-extension dev"
+  },
+  "pnpm": {
+    "overrides": {
+      "vite": "npm:rolldown-vite@7.2.5"
+    }
   }
 }
