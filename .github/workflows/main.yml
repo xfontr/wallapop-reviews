@@ -1,0 +1,18 @@
+name: Main Pipeline
+
+env:
+  HUSKY: 0
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  dependency-review:
+    uses: ./.github/workflows/dependency-review.yml
+
+  checks:
+    uses: ./.github/workflows/checks.yml
