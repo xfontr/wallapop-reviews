@@ -15,5 +15,12 @@
       "js": ["./content.js"]
     }
   ],
-  "permissions": ["storage", "tabs"]
+  "permissions": [
+    "webNavigation",
+    "webRequest",
+    "tabs",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": ["https://es.wallapop.com/*"]
 }
