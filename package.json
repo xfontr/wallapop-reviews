@@ -1,17 +1,23 @@
 {
   "name": "wallapop-reviews",
   "private": false,
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "lint": "pnpm -r run lint",
+    "typecheck": "pnpm -r run typecheck",
     "test": "pnpm -r run test",
     "build": "pnpm -r run build",
     "dev:api": "pnpm --filter wallapop-reviews-api dev",
-    "dev:extension": "pnpm --filter wallapop-reviews-extension dev"
+    "dev:extension": "pnpm --filter wallapop-reviews-extension dev",
+    "prepare": "husky"
   },
   "pnpm": {
     "overrides": {
       "vite": "npm:rolldown-vite@7.2.5"
     }
+  },
+  "devDependencies": {
+    "husky": "^9.1.7"
   }
 }

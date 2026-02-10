@@ -10,6 +10,7 @@
     "dev": "node --watch dist/index.js",
     "build": "tsc -p tsconfig.json",
     "lint": "eslint .",
+    "typecheck": "tsc -b --noEmit",
     "test": "echo No tests! && exit 0"
   },
   "keywords": [],
