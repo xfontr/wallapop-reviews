@@ -1,15 +1,18 @@
-import fastify from "fastify";
+import Fastify from "fastify";
+import rateLimit from "@fastify/rate-limit";
+import ENVIRONMENT from "./constants/environment.js";
 
-const server = fastify();
+const fastify = Fastify();
 
-server.get("/ping", async (_request, _reply) => {
-  return "pong\n";
+await fastify.register(rateLimit, {
+  max: ENVIRONMENT.rateLimit.max,
+  timeWindow: ENVIRONMENT.rateLimit.timeWindow,
 });
 
-server.listen({ port: 8080 }, (err, address) => {
-  if (err) {
-    console.error(err);
-    process.exit(1);
-  }
-  console.log(`Server listening at ${address}`);
+fastify.listen({ port: ENVIRONMENT.apiPort }, (error, _address) => {
+  if (error) process.exit(1);
 });
+
+// fastify.get("/ping", async (_request, _reply) => {
+//   return "pong\n";
+// });
