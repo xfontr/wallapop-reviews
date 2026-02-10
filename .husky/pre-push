@@ -27,8 +27,8 @@ pnpm test || exit 1
 printf "${CYAN}▶ Running linter...${RESET}"
 pnpm lint || exit 1
 
-printf "${CYAN}▶ Running build...${RESET}"
-pnpm build || exit 1
+printf "${CYAN}▶ Running typechecks...${RESET}"
+pnpm typecheck || exit 1
 
 printf "${GREEN}✓ All checks passed. Push approved.${RESET}\n"
 exit 0
