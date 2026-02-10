@@ -1,5 +1,9 @@
 {
   "name": "wallapop-reviews",
   "private": false,
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "lint": "pnpm -r run lint",
+    "test": "pnpm -r run test"
+  }
 }

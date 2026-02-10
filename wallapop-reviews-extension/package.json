@@ -9,7 +9,7 @@
     "build:dev": "tsc -b && vite build --watch",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest --passWithNoTests"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
