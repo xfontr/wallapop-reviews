@@ -9,11 +9,6 @@ const ENVIRONMENT = {
   openAi: {
     apiKey: process.env["OPENAI_API_KEY"] ?? "",
   },
-  wallapop: {
-    reviewsEndpoint:
-      process.env["REVIEWS_ENDPOINT"] ??
-      "https://api.wallapop.com/bff/sales/reviews/user-profile",
-  },
 };
 
 export default ENVIRONMENT;

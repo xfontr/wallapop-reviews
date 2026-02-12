@@ -1,6 +1,6 @@
 import ENVIRONMENT from "./shared/constants/environment.js";
 import reviews from "./reviews/index.js";
-import fastify from "./fastify.js";
+import fastify from "./shared/vendors/fastify.js";
 
 reviews(fastify);
 
