@@ -9,6 +9,7 @@
     "start": "node --env-file=.env dist/index.js",
     "dev": "node --env-file=.env --watch dist/index.js",
     "build": "tsc -p tsconfig.json",
+    "build:dev": "tsc -p tsconfig.json --watch",
     "lint": "eslint .",
     "typecheck": "tsc -b --noEmit",
     "test": "echo No tests! && exit 0",
@@ -27,6 +28,7 @@
     "@types/node": "^25.2.3",
     "eslint": "^10.0.0",
     "globals": "^17.3.0",
+    "openai": "^6.21.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.55.0"
   }

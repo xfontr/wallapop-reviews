@@ -36,6 +36,9 @@ importers:
       globals:
         specifier: ^17.3.0
         version: 17.3.0
+      openai:
+        specifier: ^6.21.0
+        version: 6.21.0
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -867,6 +870,18 @@ packages:
   on-exit-leak-free@2.1.2:
     resolution: {integrity: sha512-0eJJY6hXLGf1udHwfNftBqH+g73EU4B504nZeKpz1sYRKafAghwxEJunB2O7rDZkL4PGfsMVnTXZ2EjibbqcsA==}
     engines: {node: '>=14.0.0'}
+
+  openai@6.21.0:
+    resolution: {integrity: sha512-26dQFi76dB8IiN/WKGQOV+yKKTTlRCxQjoi2WLt0kMcH8pvxVyvfdBDkld5GTl7W1qvBpwVOtFcsqktj3fBRpA==}
+    hasBin: true
+    peerDependencies:
+      ws: ^8.18.0
+      zod: ^3.25 || ^4.0
+    peerDependenciesMeta:
+      ws:
+        optional: true
+      zod:
+        optional: true
 
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
@@ -2023,6 +2038,8 @@ snapshots:
   obug@2.1.1: {}
 
   on-exit-leak-free@2.1.2: {}
+
+  openai@6.21.0: {}
 
   optionator@0.9.4:
     dependencies:

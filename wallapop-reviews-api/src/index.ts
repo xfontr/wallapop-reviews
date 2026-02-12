@@ -1,18 +1,12 @@
-import Fastify from "fastify";
-import rateLimit from "@fastify/rate-limit";
-import ENVIRONMENT from "./constants/environment.js";
+import ENVIRONMENT from "./shared/constants/environment.js";
+import reviews from "./reviews/index.js";
+import fastify from "./fastify.js";
 
-const fastify = Fastify();
+reviews(fastify);
 
-await fastify.register(rateLimit, {
-  max: ENVIRONMENT.rateLimit.max,
-  timeWindow: ENVIRONMENT.rateLimit.timeWindow,
+fastify.listen({ port: ENVIRONMENT.apiPort }, (error) => {
+  if (!error) return;
+
+  fastify.log.error(error);
+  process.exit(1);
 });
-
-fastify.listen({ port: ENVIRONMENT.apiPort }, (error, _address) => {
-  if (error) process.exit(1);
-});
-
-// fastify.get("/ping", async (_request, _reply) => {
-//   return "pong\n";
-// });
