@@ -1,15 +1,12 @@
-import fastify from "fastify";
+import ENVIRONMENT from "./shared/constants/environment.js";
+import reviews from "./reviews/index.js";
+import fastify from "./shared/vendors/fastify.js";
 
-const server = fastify();
+reviews(fastify);
 
-server.get("/ping", async (_request, _reply) => {
-  return "pong\n";
-});
+fastify.listen({ port: ENVIRONMENT.apiPort }, (error) => {
+  if (!error) return;
 
-server.listen({ port: 8080 }, (err, address) => {
-  if (err) {
-    console.error(err);
-    process.exit(1);
-  }
-  console.log(`Server listening at ${address}`);
+  fastify.log.error(error);
+  process.exit(1);
 });
